@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+  --bg-base: #050505;
+  --bg-soft: #0c0c0c;
+  --text-main: #f4f4f5;
+  --text-muted: #a1a1aa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% -10%, #1c1c1c 0%, transparent 35%),
+    radial-gradient(circle at 100% 0%, #151515 0%, transparent 30%),
+    var(--bg-base);
+  color: var(--text-main);
+}

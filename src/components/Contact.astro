@@ -1,0 +1,50 @@
+---
+const email = "alexcruzgargallo@gmail.com";
+const phone = "+34 633 630 797";
+---
+
+<section id="contact" class="mx-auto max-w-6xl px-6 py-20">
+  <h2 class="text-3xl font-bold">Contacto</h2>
+  <p class="mt-2 text-zinc-400">
+    Contactame por teléfono o correo electrónico.
+  </p>
+  <div class="mt-6 rounded-xl border border-white/10 bg-zinc-900/30 p-4">
+    <p>Teléfono:</p>
+    <p
+      class="mt-3 rounded-lg border border-white/10 bg-black/30 px-4 py-3 text-zinc-200"
+    >
+      {phone}
+    </p>
+    <p class="mt-3">Correo electrónico:</p>
+    <p
+      class="mt-3 rounded-lg border border-white/10 bg-black/30 px-4 py-3 text-zinc-200"
+    >
+      {email}
+    </p>
+    <div class="mt-3 flex gap-2">
+      <a
+        href={`mailto:${email}`}
+        class="rounded-lg bg-white px-4 py-2 text-sm font-medium text-black hover:opacity-90"
+      >
+        Enviar mail
+      </a>
+      <button
+        id="copy-email-btn"
+        type="button"
+        class="cursor-pointer rounded-lg border border-white/10 bg-zinc-800 px-4 py-2 text-sm font-medium text-white hover:border-white/30"
+      >
+        Copiar
+      </button>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  const email = "alexcruzgargallo@gmail.com";
+  const btn = document.getElementById("copy-email-btn");
+
+  btn?.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(email);
+    btn.textContent = "Copiado";
+  });
+</script>

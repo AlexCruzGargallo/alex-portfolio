@@ -1,0 +1,71 @@
+---
+const projects = [
+  {
+    name: "React UI Library",
+    img: "/ui-library.png",
+    description:
+      "Libreria de componentes accesible y personalizable, construida con buenas practicas WCAG.",
+    tags: ["React", "TypeScript", "Storybook", "Testing Library"],
+  },
+  {
+    name: "Wordle",
+    img: "/wordle.png",
+    description:
+      "Implementación del juego Wordle con funcionalidades personalizadas y diseño responsive.",
+    url: "https://wordle-alpha-wine.vercel.app/",
+    tags: ["React", "JavaScript", "Tailwind CSS"],
+  },
+];
+---
+
+<section id="projects" class="mx-auto max-w-6xl px-6 py-20">
+  <h2 class="text-3xl font-bold">Proyectos Personales</h2>
+  <p class="mt-2 text-zinc-400">
+    Algunos proyectos personales en los que he trabajado o sigo trabajando.
+  </p>
+  <div class="mt-10 grid gap-4 md:grid-cols-2">
+    {
+      projects.map((project) => (
+        <article class="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/30">
+          <div
+            class="h-28 border-b border-white/10 bg-zinc-900 bg-cover bg-no-repeat"
+            style={`background-image: url(${project.img}); background-position: center top;`}
+          />
+          <div class="px-6 pt-4">
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-zinc-300">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold">{project.name}</h3>
+            <p class="mt-2 text-sm text-zinc-400">{project.description}</p>
+            <div class="mt-4 flex gap-4">
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noreferrer"
+                class="mt-4 inline-block rounded-md p-2 text-sm text-white outline transition hover:text-zinc-300"
+              >
+                Github
+              </a>
+              {project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="mt-4 inline-block rounded-md p-2 text-sm text-white outline transition hover:text-zinc-300"
+                >
+                  Web
+                </a>
+              )}
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

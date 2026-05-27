@@ -1,0 +1,77 @@
+---
+import RocheIcon from "../icons/Roche.astro";
+import TribooIcon from "../icons/Triboo.astro";
+
+const jobs = [
+  {
+    period: "Nov 2022 - May 2023",
+    title: "Desarrollador Front-end",
+    company: "Triboo",
+    bullets: [
+      "Desarrollo y mantenimiento de interfaces de usuario.",
+      "Creacion de componentes reutilizables con React.",
+      "Colaboracion con diseno y optimizacion de rendimiento web.",
+      "Implementacion de pruebas unitarias y E2E con Cypress.",
+    ],
+    icon: TribooIcon,
+  },
+  {
+    period: "Sep 2024 - Sep 2025",
+    title: "Desarrollador Front-end Intern",
+    company: "Roche",
+    bullets: [
+      "Mantenimiento de componentes del Design System de Roche.",
+      "Integracion con Figma Code Connect para obtener codigo automaticamente desde el diseño.",
+      "Creación de un MCP que expone documentación de componentes para asistencia de IA en migraciones y refactorización de código.",
+      "Mejoras de accesibilidad en los componentes siguiendo las pautas WCAG.",
+      "Implementación de aplicaciones de ejemplo para demostrar el uso correcto de los componentes en React y Angular.",
+    ],
+    icon: RocheIcon,
+  },
+];
+---
+
+<section id="experience" class="mx-auto max-w-6xl px-6 py-20">
+  <h2 class="mb-12 text-3xl font-bold">Experiencia Profesional</h2>
+  <div class="relative">
+    <div
+      class="absolute top-0 left-1/2 hidden h-full w-px -translate-x-1/2 bg-white/10 md:block"
+    >
+    </div>
+    <div class="space-y-16">
+      {
+        jobs.map((job, i) => {
+          return (
+            <div class="relative grid items-center gap-6 md:grid-cols-2">
+              <div class={i % 2 === 0 ? "md:pr-14" : "md:order-2 md:pl-14"}>
+                <article class="rounded-2xl border border-white/10 bg-zinc-900/30 p-6">
+                  <span class="text-xs text-zinc-400">{job.period}</span>
+
+                  <h3 class="mt-2 text-2xl font-semibold">{job.title}</h3>
+
+                  <p class="mt-1 text-zinc-500">{job.company}</p>
+
+                  <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+                    {job.bullets.map((item) => (
+                      <li>✓ {item}</li>
+                    ))}
+                  </ul>
+                </article>
+              </div>
+              <div
+                class={
+                  i % 2 === 0 ? "hidden md:block" : "hidden md:order-1 md:block"
+                }
+              />
+              <div class="absolute top-8 left-1/2 z-10 hidden h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full border border-white/10 bg-zinc-950 shadow-[0_0_25px_rgba(255,255,255,0.08)] md:flex">
+                <div class="flex h-8 w-8 items-center justify-center">
+                  <job.icon />
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

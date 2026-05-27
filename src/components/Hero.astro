@@ -1,0 +1,55 @@
+---
+import GitHubIcon from "../icons/GitHub.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+---
+
+<section id="hero" class="mx-auto max-w-6xl px-6 py-24 md:py-28">
+  <div class="grid items-center gap-10 md:grid-cols-2">
+    <div>
+      <h1 class="mb-6 text-5xl font-bold md:text-7xl">ALEX CRUZ</h1>
+      <span
+        class="rounded-full border border-white/10 px-4 py-2 text-xs text-zinc-400"
+      >
+        DESARROLLADOR FRONT-END
+      </span>
+      <h1 class="mt-6 text-5xl leading-tight font-bold md:text-7xl">
+        Creando interfaces de usuario rapidas, accesibles y escalables.
+      </h1>
+      <p class="mt-6 max-w-xl text-lg text-zinc-400">
+        Frontend Developer especializado en React y TypeScript, con experiencia
+        en arquitectura de componentes e implementación de Design Systems
+        escalables.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href="https://www.linkedin.com/in/alex-cruz-gargallo/"
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center rounded-xl border border-white/10 px-6 py-3 transition hover:border-white/30"
+        >
+          <LinkedInIcon class="mr-2 inline h-5 w-5" />
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/alexcruzgargallo"
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center rounded-xl border border-white/10 px-6 py-3 transition hover:border-white/30"
+        >
+          <GitHubIcon class="mr-2 inline h-5 w-5" />
+          GitHub
+        </a>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <div class="relative">
+        <div class="absolute inset-0 rounded-full bg-white/20 blur-3xl"></div>
+        <img
+          src="/alex.png"
+          alt="alex cruz gargallo"
+          class="relative h-52 w-52 rounded-full border-4 border-zinc-800 object-cover md:h-60 md:w-60"
+        />
+      </div>
+    </div>
+  </div>
+</section>
