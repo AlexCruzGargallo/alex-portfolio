@@ -3,14 +3,13 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
-const repo = process.env.GITHUB_REPOSITORY?.split('/')[1];
-const isGitHubPagesBuild = process.env.GITHUB_ACTIONS === 'true' && !!repo;
+const isGitHubPagesBuild = process.env.GITHUB_ACTIONS === 'true';
 
 const site = isGitHubPagesBuild
-  ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io`
+  ? 'https://alexcruzgargallo.dev'
   : 'http://localhost:4321';
 
-const base = isGitHubPagesBuild ? `/${repo}` : '/';
+const base = '/';
 
 // https://astro.build/config
 export default defineConfig({
