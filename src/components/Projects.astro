@@ -1,15 +1,16 @@
 ---
+const base = import.meta.env.BASE_URL;
 const projects = [
   {
     name: "React UI Library",
-    img: "/ui-library.png",
+    img: "ui-library.png",
     description:
       "Libreria de componentes accesible y personalizable, construida con buenas practicas WCAG.",
     tags: ["React", "TypeScript", "Storybook", "Testing Library"],
   },
   {
     name: "Wordle",
-    img: "/wordle.png",
+    img: "wordle.png",
     description:
       "Implementación del juego Wordle con funcionalidades personalizadas y diseño responsive.",
     url: "https://wordle-alpha-wine.vercel.app/",
@@ -29,7 +30,7 @@ const projects = [
         <article class="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/30">
           <div
             class="h-28 border-b border-white/10 bg-zinc-900 bg-cover bg-no-repeat"
-            style={`background-image: url(${project.img}); background-position: center top;`}
+            style={`background-image: url(${base}${project.img}); background-position: center top;`}
           />
           <div class="px-6 pt-4">
             <div class="flex flex-wrap gap-2">
