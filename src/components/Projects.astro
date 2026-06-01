@@ -2,9 +2,12 @@
 const projects = [
   {
     name: "React UI Library",
-    img: "ui-library.png",
+    img: "ui-react-library.png",
     description:
       "Libreria de componentes accesible y personalizable, construida con buenas practicas WCAG.",
+    github: "https://github.com/AlexCruzGargallo/ui-react",
+    storybook:
+      "https://alexcruzgargallo.github.io/ui-react/?path=/docs/components-badge--docs",
     tags: ["React", "TypeScript", "Storybook", "Testing Library"],
   },
   {
@@ -12,6 +15,7 @@ const projects = [
     img: "wordle.png",
     description:
       "Implementación del juego Wordle con funcionalidades personalizadas y diseño responsive.",
+    github: "https://github.com/AlexCruzGargallo/wordle",
     url: "https://wordle-alpha-wine.vercel.app/",
     tags: ["React", "JavaScript", "Tailwind CSS"],
   },
@@ -44,14 +48,26 @@ const projects = [
             <h3 class="text-lg font-semibold">{project.name}</h3>
             <p class="mt-2 text-sm text-zinc-400">{project.description}</p>
             <div class="mt-4 flex gap-4">
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noreferrer"
-                class="mt-4 inline-block rounded-md p-2 text-sm text-white outline transition hover:text-zinc-300"
-              >
-                Github
-              </a>
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="mt-4 inline-block rounded-md p-2 text-sm text-white outline transition hover:text-zinc-300"
+                >
+                  GitHub
+                </a>
+              )}
+              {project.storybook && (
+                <a
+                  href={project.storybook}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="mt-4 inline-block rounded-md p-2 text-sm text-white outline transition hover:text-zinc-300"
+                >
+                  Storybook
+                </a>
+              )}
               {project.url && (
                 <a
                   href={project.url}
